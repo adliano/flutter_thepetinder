@@ -1,5 +1,5 @@
 # thepetinder
 
-A new Flutter application for Petinder
+A new Android and IOS application for Petinder
 
 
