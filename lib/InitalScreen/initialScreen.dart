@@ -11,6 +11,7 @@
 import 'package:flutter/material.dart';
 import '../login/login.dart';
 import '../singup/singup.dart';
+import 'package:thepetinder/widgets/button.dart';
 
 //class Login extends StatefulWidget {
 //
@@ -139,27 +140,29 @@ class ButtonsRow extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         /// Login Button
-        Container(
-          margin: EdgeInsets.only(top: 20.0, right: 20.0),
-          child: RaisedButton(
-            child: Text('Login',style: TextStyle(color: Colors.white),),
-            /// Push Login Screen
-            onPressed: () => onLoginPressed(context),
-            padding: EdgeInsets.only(left: 15.0, right: 15.0),
-            color: Theme.of(context).buttonColor,
-          ),
-        ),
+        new Button(onButtonClick: () => onLoginPressed(context), text: 'Login'),
+//        Container(
+//          margin: EdgeInsets.only(top: 20.0, right: 20.0),
+//          child: RaisedButton(
+//            child: Text('Login',style: TextStyle(color: Colors.white),),
+//            /// Push Login Screen
+//            onPressed: () => onLoginPressed(context),
+//            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+//            color: Theme.of(context).buttonColor,
+//          ),
+//        ),
         /// Create account button
-        Container(
-          margin: EdgeInsets.only(top: 20.0, left: 20.0),
-          child: RaisedButton(
-            child: Text('Sing up',style: TextStyle(color: Colors.white),),
-            /// Push Sing Up Screen
-            onPressed: () => onSingUpPressed(context),
-            padding: EdgeInsets.only(left: 15.0, right: 15.0),
-            color: Theme.of(context).buttonColor,
-          ),
-        ),
+        new Button(onButtonClick: () => onSingUpPressed(context), text: 'Sing up'),
+//        Container(
+//          margin: EdgeInsets.only(top: 20.0, left: 20.0),
+//          child: RaisedButton(
+//            child: Text('Sing up',style: TextStyle(color: Colors.white),),
+//            /// Push Sing Up Screen
+//            onPressed: () => onSingUpPressed(context),
+//            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+//            color: Theme.of(context).buttonColor,
+//          ),
+//        ),
       ],
     );
   }

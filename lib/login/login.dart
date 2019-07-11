@@ -7,16 +7,35 @@
 import 'package:flutter/material.dart';
 import 'package:thepetinder/widgets/email.dart';
 import 'package:thepetinder/widgets/passwordField.dart';
+import 'package:thepetinder/widgets/button.dart';
+import 'dart:io' show Platform;
+
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => new LoginState();
-
 }
 
 ///  LoginState
-class LoginState  extends State<Login>{
+class LoginState extends State<Login> {
+
+  /// TODO Create a class to DRY this code
+  /// Method to check if device its an iOS
+  /// in case its an iOS it will return a back icon arrow
+  /// on AppBar
+  appBarBackAction() {
+    if (Platform.isIOS) {
+      return IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            // When clicked go back to last screen
+            Navigator.pop(context);
+          });
+    }
+    return null;
+  }
+
   /// ************ Build method ************ \\\
   @override
   Widget build(BuildContext context) {
@@ -25,58 +44,81 @@ class LoginState  extends State<Login>{
       /// ********* App Bar ********* \\\
       appBar: AppBar(
         /// Leading Icon
-          leading: Icon(const IconData(0xe800, fontFamily: 'PetinderIcon'), color: Colors.white),
-          /// Title for appbar and style to make it white
-          title: Text("Petinder",style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,)),
+        leading: Icon(const IconData(0xe800, fontFamily: 'PetinderIcon'),
+            color: Colors.white),
+
+        /// Title for appbar and style to make it white
+        title: Text("Petinder",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            )),
         actions: <Widget>[
-          /// Login action button
-//          IconButton(icon: const Icon(Icons.account_circle,color: Colors.white), onPressed: null), /// TODO Implement onPressed
+          /// Back action button
+          appBarBackAction()
+          // IconButton(icon: const Icon(Icons.arrow_back,color: Colors.white), onPressed: null), /// TODO Implement onPressed
           /// Create account action button
-//          IconButton(icon: const Icon(Icons.person_add,color: Colors.white), onPressed: null), /// TODO Implement onPressed
+          // IconButton(icon: const Icon(Icons.person_add,color: Colors.white), onPressed: null), /// TODO Implement onPressed
         ],
       ),
+
       /// ********* Body ********* \\\
       /// Container to add padding and margin
       body: Container(
-        margin: EdgeInsets.only(top: 10.0),
-        padding: EdgeInsets.only(left: 30.0,right: 30.0),
+        margin: EdgeInsets.only(top: 1.0),
+        padding: EdgeInsets.only(left: 30.0, right: 30.0),
+
         /// Main ListView to enable scrolling
         child: ListView(
           padding: EdgeInsets.all(15.0),
           children: <Widget>[
             /// Place Image on center
             Center(
-              child: Image.asset('assets/images/ki85j78eT.png',),
+              child: Image.asset(
+                'assets/images/ki85j78eT.png',
+              ),
             ),
+
             /// Login Getting
             Container(
               padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-              child: Text("Login",
+              child: Text(
+                "Login",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold,),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             Column(
               // this Column will hold the EditTexts and Buttons
               children: <Widget>[
-                ///////////////////////////////////////////////////
                 ///////////// Email TextEdit with icon ////////////
-                ///////////////////////////////////////////////////
                 new EmailTextField(),
                 //
                 SizedBox(height: 10.0), // Add some margin
                 //
-                ///////////////////////////////////////////////////
                 /////////// Password TextEdit with icon ///////////
-                ///////////////////////////////////////////////////
                 new PasswordField(),
-
+                ///////////////////////////////////////////////////
+                //
+                SizedBox(height: 20.0), // Add some margin
+                //
+                new Button(
+                  text: 'Login',
+                  // TODO Implement this onclick to login
+                    onButtonClick: () => {
+                          Fluttertoast.showToast(
+                              msg: "Button Pressed",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIos: 1,
+                              backgroundColor: Colors.greenAccent,
+                              textColor: Colors.white,
+                              fontSize: 16.0)
+                        }),
               ],
-
             )
-
           ],
         ),
       ),
