@@ -5,18 +5,19 @@
 *
 * */
 import 'package:flutter/material.dart';
+import 'package:thepetinder/widgets/email.dart';
+import 'package:thepetinder/widgets/passwordField.dart';
 
 class Login extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => new LoginState();
 
-
 }
 
 ///  LoginState
 class LoginState  extends State<Login>{
-  // Build method
+  /// ************ Build method ************ \\\
   @override
   Widget build(BuildContext context) {
     /// Scaffold
@@ -49,53 +50,31 @@ class LoginState  extends State<Login>{
             Center(
               child: Image.asset('assets/images/ki85j78eT.png',),
             ),
-            /// Getting
+            /// Login Getting
             Container(
               padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-              child: Text("Animals and Universal Consciouness",
+              child: Text("Login",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold,),
               ),
             ),
-            Text('Our mission is simple: Make technology an asset for animal lovers.'+
-                ' Our clients are people that love animals and are interested in '+
-                'contributing to reduce the number of animals in shelters. '+
-                'The greatest defense to our pet overpopulation crisis is a well-informed community.'+
-                ' Make sure that your friends and family are aware of the pet overpopulation '+
-                'crisis and how their personal actions can help solve or contribute to the problem.',
-              textAlign: TextAlign.center,
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 15.0, bottom: 10.0),
-              child: Text("\"These are ancient, sentient earth residents,"+
-                  " with tremendous intelligence and enormous life force."+
-                  " Not someone to kill, but someone to learn from.\"" ,
-              style: TextStyle(fontWeight: FontWeight.w900),),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
+              // this Column will hold the EditTexts and Buttons
               children: <Widget>[
-                /// Login Button
-                Container(
-                  margin: EdgeInsets.only(top: 20.0, right: 20.0),
-                  child: RaisedButton(
-                    child: Text('Login',style: TextStyle(color: Colors.white),),
-                    onPressed: () {}, // TODO implement this button to login screen
-                    padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                    color: Theme.of(context).buttonColor,
-                  ),
-                ),
-                /// Create account button
-                Container(
-                  margin: EdgeInsets.only(top: 20.0, left: 20.0),
-                  child: RaisedButton(
-                    child: Text('Sing up',style: TextStyle(color: Colors.white),),
-                    onPressed: () {}, // TODO implement this button to login screen
-                    padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                    color: Theme.of(context).buttonColor,
-                  ),
-                ),
+                ///////////////////////////////////////////////////
+                ///////////// Email TextEdit with icon ////////////
+                ///////////////////////////////////////////////////
+                new EmailTextField(),
+                //
+                SizedBox(height: 10.0), // Add some margin
+                //
+                ///////////////////////////////////////////////////
+                /////////// Password TextEdit with icon ///////////
+                ///////////////////////////////////////////////////
+                new PasswordField(),
+
               ],
+
             )
 
           ],

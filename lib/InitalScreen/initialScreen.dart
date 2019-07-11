@@ -37,9 +37,9 @@ class InitialScreen  extends StatelessWidget {
           fontWeight: FontWeight.bold,)),
         actions: <Widget>[
           /// Login action button
-//          IconButton(icon: const Icon(Icons.account_circle,color: Colors.white), onPressed: null), /// TODO Implement onPressed
+//          IconButton(icon: const Icon(Icons.account_circle,color: Colors.white), onPressed: null),
           /// Create account action button
-//          IconButton(icon: const Icon(Icons.person_add,color: Colors.white), onPressed: null), /// TODO Implement onPressed
+//          IconButton(icon: const Icon(Icons.person_add,color: Colors.white), onPressed: null),
         ],
       ),
       /// ********* Body ********* \\\

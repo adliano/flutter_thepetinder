@@ -9,8 +9,8 @@ void main() => runApp(
         buttonColor: Colors.blue
     ),
     title: 'Petinder',
-//    home: new Login(),
-    home: new InitialScreen(),
+    home: new Login(),
+//    home: new InitialScreen(),
   )
 );
 
