@@ -16,7 +16,6 @@ class PasswordField extends StatefulWidget {
 
 }
 
-
 class PasswordFieldState extends State<PasswordField>{
 
   bool hidePassword = true;
