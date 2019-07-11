@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './login/login.dart';
+import './InitalScreen/initialScreen.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -8,7 +9,8 @@ void main() => runApp(
         buttonColor: Colors.blue
     ),
     title: 'Petinder',
-    home: new Login(),
+//    home: new Login(),
+    home: new InitialScreen(),
   )
 );
 
