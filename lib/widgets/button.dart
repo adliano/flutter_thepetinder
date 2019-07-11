@@ -10,8 +10,8 @@ class Button extends StatelessWidget{
    final String text;
 
   const Button({
-    @required this.onButtonClick,
     @required this.text,
+    @required this.onButtonClick,
   });
 
 

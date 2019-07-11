@@ -7,6 +7,9 @@
 import 'package:flutter/material.dart';
 import 'package:thepetinder/widgets/email.dart';
 import 'package:thepetinder/widgets/passwordField.dart';
+import 'package:thepetinder/widgets/button.dart';
+
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'dart:io' show Platform;
 
@@ -107,6 +110,19 @@ class SingUpState extends State<SingUp> {
                 SizedBox(height: 10.0), // Add some margin
                 //
                 new PasswordField(),
+                ///////////////////////////////////////////////////
+                new Button(
+                    text: 'Sing Up',
+                    onButtonClick: () {
+                      Fluttertoast.showToast(
+                          msg: "Button Pressed",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.BOTTOM,
+                          timeInSecForIos: 1,
+                          backgroundColor: Colors.greenAccent,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
+                    })
               ],
             )
           ],
