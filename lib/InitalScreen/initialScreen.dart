@@ -114,7 +114,11 @@ class InitialScreen  extends StatelessWidget {
     );
   }
 }
-
+// ignore: slash_for_doc_comments
+/** **************************************************
+ *  ******************** Buttons *********************
+ *  **************************************************
+ */
 
 class ButtonsRow extends StatelessWidget{
   // ignore: slash_for_doc_comments
